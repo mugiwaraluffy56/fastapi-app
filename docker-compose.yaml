@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mohana123
+      POSTGRES_DB: puneeth
+    ports:
+      - "5432:5432"
+
+  fastapi:
+    build: .
+    container_name: fastapi-app
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://postgres:mohana123@localhost:5432/puneeth
+
