@@ -19,5 +19,5 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://postgres:mohana123@localhost:5432/puneeth
+      DATABASE_URL: postgresql://postgres:mohana123@postgres:5432/puneeth
 
