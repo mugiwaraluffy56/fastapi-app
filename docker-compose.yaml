@@ -3,10 +3,8 @@ services:
     image: postgres:16
     container_name: postgres
     restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mohana123
-      POSTGRES_DB: puneeth
+    env_file:
+      - .env
     ports:
       - "5433:5432"
 
@@ -16,8 +14,7 @@ services:
     restart: always
     depends_on:
       - postgres
+    env_file:
+      - .env
     ports:
       - "8000:8000"
-    environment:
-      DATABASE_URL: postgresql://postgres:mohana123@postgres:5432/puneeth
-
