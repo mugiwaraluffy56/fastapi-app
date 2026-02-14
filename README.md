@@ -10,3 +10,5 @@
 
  docker-compose up -d
 ```
+
+#### The API was tested using Postman as the API client.
