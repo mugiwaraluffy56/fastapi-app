@@ -8,9 +8,9 @@ services:
     ports:
       - "5433:5432"
 
-  fastapi:
+  flask:
     build: .
-    container_name: fastapi-app
+    container_name: flask-app
     restart: always
     depends_on:
       - postgres
